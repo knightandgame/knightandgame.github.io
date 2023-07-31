@@ -135,6 +135,40 @@ body {
     </style>
 
 
+    <style type="text/css">
+  body {
+  margin: 0;
+}
+
+header.masthead {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  /* Add the background and opacity using !important to override any conflicting styles */
+  background-image: url('assets/img/portfolio/wall paper2.png') !important;
+  opacity: 0.7 !important;
+}
+
+.intro-lead-in {
+  font-size: 40px;
+}
+
+#typewriter-text::after {
+  content: "|"; /* Add a vertical blinking cursor */
+  display: inline-block;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+    </style>
+
+
     <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
@@ -156,15 +190,20 @@ body {
         </div>
     </nav>
   <header class="masthead" style="background-image: url('assets/img/portfolio/wall paper2.png'); opacity: 0.7;">
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">
-                    <!-- The text with the custom styling -->
-                    <span><br>Exemplary Web Designs: Merging Corporate Elegance with Seamless Functionality<br><br></span>
-                </div>
-            </div>
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-lead-in">
+          <!-- The text without typewriter animation -->
+          <br>Exemplary Web Designs: 
         </div>
-    </header>
+
+        <div class="intro-lead-in">
+          <!-- The text with the custom styling and typewriter animation -->
+          <span id="typewriter-text"><br>Merging Corporate Elegance with Seamless Functionality<br><br></span>
+        </div>
+      </div>
+    </div>
+  </header>
     <section id="services">
         <div class="container">
             <div class="row">
@@ -499,6 +538,29 @@ body {
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">const typewriterText = document.getElementById('typewriter-text');
+const textContent = typewriterText.textContent;
+const typingDelay = 100; // Delay in milliseconds between each character typing
+
+function typeWriterAnimation() {
+  typewriterText.textContent = ''; // Clear the original text
+  let charIndex = 0;
+  const textLength = textContent.length;
+
+  function type() {
+    if (charIndex < textLength) {
+      typewriterText.textContent += textContent.charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    }
+  }
+
+  type(); // Start the typing animation
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  typeWriterAnimation();
+});</script>
 
 </body>
 
