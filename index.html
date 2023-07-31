@@ -136,7 +136,7 @@ body {
 
 
     <style type="text/css">
-  body {
+ body {
   margin: 0;
 }
 
@@ -152,20 +152,112 @@ header.masthead {
 }
 
 .intro-lead-in {
-  font-size: 40px;
+  font-size: 70px !important;
+  line-height: 1.3!important; /* Add line-height to create spacing between lines */
 }
 
 #typewriter-text::after {
   content: "|"; /* Add a vertical blinking cursor */
   display: inline-block;
-  animation: blink 0.7s step-end infinite;
+  animation: blink 0.7s step-end infinite!important;
 }
 
-@keyframes blink {
-  from, to { opacity: 0; }
-  50% { opacity: 1; }
+/* Responsive Font Size for Mobile */
+@media screen and (max-width: 768px) {
+  .intro-lead-in {
+    font-size: 30px !important;
+    line-height: 1.6; /* Increase line-height for better readability on mobile */
+    letter-spacing: 1px; /* Add letter-spacing to create spacing between letters */
+  }
 }
 
+    </style>
+
+
+    <style>
+ body {
+  margin: 0;
+}
+
+/* New Digital Calling Card Style */
+.digital-calling-card {
+  background-color: rgba(128, 128, 128, 0.5); /* Faded gray background */
+  padding: 10px 20px; /* Reduce the padding on all sides */
+  border-radius: 20px; /* Rounded corners */
+  margin-bottom: 30px;
+  max-width: 400px; /* Set the maximum width for the card container */
+  margin: 0 auto; /* Center the card horizontally */
+}
+
+.digital-calling-card h4,
+.digital-calling-card p {
+  text-align: center;
+}
+
+.digital-calling-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Make the image a circle */
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.social-buttons {
+  text-align: center;
+}
+
+.social-buttons a {
+  color: white;
+  font-size: 24px;
+  margin: 5px;
+}
+
+.social-buttons a:hover {
+  color: #cccccc; /* Hover color for social buttons */
+}
+
+    </style>
+
+    <style type="text/css">
+ /* Styling for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999; /* Set a high z-index to ensure the modal is on top of other elements */
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80%; /* Set the maximum width for the modal content */
+  max-height: 80%; /* Set the maximum height for the modal content */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-y: auto; /* Add vertical scroll if the content exceeds the max height */
+}
+
+/* Style for the button */
+button#modal-button {
+  background-color: #58696f; /* Specific gray color */
+  color: white;
+  padding: 10px 20px;
+  font-size: 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#modal-button:hover {
+  background-color: #48585e; /* Darker gray color on hover */
+}
     </style>
 
 
@@ -189,21 +281,38 @@ header.masthead {
             </div>
         </div>
     </nav>
-  <header class="masthead" style="background-image: url('assets/img/portfolio/wall paper2.png'); opacity: 0.7;">
-    <div class="container">
-      <div class="intro-text">
-        <div class="intro-lead-in">
-          <!-- The text without typewriter animation -->
-          <br>Exemplary Web Designs: 
-        </div>
+<header class="masthead" style="background-image: url('assets/img/portfolio/wallpaper2.png'); opacity: 0.7;">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">
+        <!-- The text without typewriter animation -->
+        <br>Exemplary Web Designs:
+      </div>
 
-        <div class="intro-lead-in">
-          <!-- The text with the custom styling and typewriter animation -->
-          <span id="typewriter-text"><br>Merging Corporate Elegance with Seamless Functionality<br><br></span>
-        </div>
+      <div class="intro-lead-in">
+        <!-- The text with the custom styling and typewriter animation -->
+        <span id="typewriter-text">
+          <br>Merging Corporate Elegance with Seamless Functionality<br><br>
+        </span>
+
+        <!-- Add four BR tags to create space -->
+        <br><br>
+
+        <!-- Button to trigger the modal -->
+        <button id="modal-button">Rush Order Website</button>
       </div>
     </div>
-  </header>
+  </div>
+
+  <!-- The modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <!-- Embed the Google Form here -->
+    <iframe src="https://forms.gle/fSDWYLvhQdArspq79" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
+</header>
+
     <section id="services">
         <div class="container">
             <div class="row">
@@ -341,16 +450,17 @@ header.masthead {
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="team-member">
-                    <img class="rounded-circle mx-auto img-fade" src="assets/img/team/IMG_3865.jpeg" style="object-fit: cover;">
-                    <h4 style="color: white !important;"><strong>Eli Martinez</strong></h4>
-                    <p class="text-muted" style="color: white !important;">Front-End Web Designer and Developer</p>
-                    <ul class="list-inline social-buttons">
-                        <li class="list-inline-item"><a href="https://www.instagram.com/changemartnez/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.facebook.com/eliknightmartnez/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/eli-knight-m-98696721b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
+                <div class="team-member digital-calling-card">
+                            <h4 class="modern-heading">Eli Martinez</h4><br><br>
+    <img class="rounded-circle mx-auto img-fade" src="assets/img/team/IMG_3865.jpeg" style="object-fit: cover;">
+    
+    <p class="text-muted" style="color: white !important;">Front-End Web Designer and Developer</p>
+    <ul class="list-inline social-buttons">
+        <li class="list-inline-item"><a href="https://www.instagram.com/changemartnez/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li class="list-inline-item"><a href="https://www.facebook.com/eliknightmartnez/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li class="list-inline-item"><a href="https://www.linkedin.com/in/eli-knight-m-98696721b/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+    </ul>
+</div>
             </div>
         </div>
     </div>
@@ -359,7 +469,7 @@ header.masthead {
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2  class="modern-heading">Contact Me</h2>
+                    <h2  class="modern-heading">Contact Me</h2><br><br>
                     <p style="color: rgb(255,255,255);">I'm excited to collaborate with you on your next web design project. If you're interested in partnering with me or have any inquiries, feel free to contact me at<br></p>
                 </div>
             </div>
@@ -540,7 +650,7 @@ header.masthead {
 
 <script type="text/javascript">const typewriterText = document.getElementById('typewriter-text');
 const textContent = typewriterText.textContent;
-const typingDelay = 100; // Delay in milliseconds between each character typing
+const typingDelay = 120; // Delay in milliseconds between each character typing
 
 function typeWriterAnimation() {
   typewriterText.textContent = ''; // Clear the original text
@@ -561,6 +671,32 @@ function typeWriterAnimation() {
 document.addEventListener('DOMContentLoaded', function () {
   typeWriterAnimation();
 });</script>
+
+<script type="text/javascript">
+// Get the modal and the button
+var modal = document.getElementById("modal");
+var modalButton = document.getElementById("modal-button");
+
+// Function to show the modal and disable scrolling
+modalButton.onclick = function() {
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Disable scrolling on the body
+}
+
+// Close the modal and enable scrolling
+function closeModal() {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Enable scrolling on the body
+}
+
+// Close the modal when clicked outside the modal content
+window.onclick = function(event) {
+  if (event.target == modal) {
+    closeModal();
+  }
+}
+
+</script>
 
 </body>
 
